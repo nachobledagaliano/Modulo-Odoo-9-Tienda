@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="juegos_pc_action"
+                    name="PC"
+                    res_model="juegos.pc" />
+        <menuitem id="juegos_pc_menu"
+                  name="PC"
+                  action="juegos_pc_action"
+                  parent="menu_consolas"
+                  sequence="11" />
+
+        <record id="juegos_pc_view_tree" model="ir.ui.view">
+            <field name="name">Lista de pc</field>
+            <field name="model">juegos.pc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="juegos_pc_view_form" model="ir.ui.view">
+            <field name="name">Registro de pc</field>
+            <field name="model">juegos.pc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="limpiar" type="object" string="Limpiar" class="oe_highlight" />
+
+                    </header>
+                    <group>
+                        <field name="marca" />
+                        <field name="nombre" />
+                        <field name="descripcion" />
+                        <field name="precio" />
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juegos_pc_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de pc</field>
+            <field name="model">juegos.pc</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

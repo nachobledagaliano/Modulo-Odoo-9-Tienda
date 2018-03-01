@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="juegos_consolas_action"
+                    name="Consolas"
+                    res_model="juegos.consolas" />
+        <menuitem name="Almacen" id="menu_consolas" sequence="10" />
+        <menuitem id="juegos_consolas_menu"
+                  name="Consolas"
+                  action="juegos_consolas_action"
+                  parent="menu_consolas"
+                  sequence="10" />
+        <record id="juegos_consolas_view_tree" model="ir.ui.view">
+            <field name="name">Lista de consolas</field>
+            <field name="model">juegos.consolas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </tree>
+            </field>
+        </record>
+        <record id="juegos_consolas_view_form" model="ir.ui.view">
+            <field name="name">Registro de consolas</field>
+            <field name="model">juegos.consolas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="limpiar" type="object" string="Limpiar" class="oe_highlight" />
+
+                    </header>
+                    <group>
+                        <field name="marca" />
+                        <field name="nombre" />
+                        <field name="descripcion" />
+                        <field name="precio" />
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juegos_consolas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de consolas</field>
+            <field name="model">juegos.consolas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

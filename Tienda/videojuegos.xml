@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="juegos_videojuegos_action"
+                    name="Videojuegos"
+                    res_model="juegos.videojuegos" />
+        <menuitem id="juegos_videojuegos_menu"
+                  name="VideoJuegos"
+                  action="juegos_videojuegos_action"
+                  parent="menu_consolas"
+                  sequence="12" />
+
+        <record id="juegos_videojuegos_view_tree" model="ir.ui.view">
+            <field name="name">Lista de juegos</field>
+            <field name="model">juegos.videojuegos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="juegos_discoduros_view_form" model="ir.ui.view">
+            <field name="name">Registro de juegos</field>
+            <field name="model">juegos.videojuegos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="limpiar" type="object" string="Limpiar" class="oe_highlight" />
+
+                    </header>
+                    <group>
+                        <field name="marca" />
+                        <field name="nombre" />
+                        <field name="descripcion" />
+                        <field name="precio" />
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juegos_videojuegos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de juegos</field>
+            <field name="model">juegos.videojuegos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

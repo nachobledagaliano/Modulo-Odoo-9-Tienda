@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="juegos_mandos_action"
+                    name="Mandos"
+                    res_model="juegos.mandos" />
+        <menuitem id="juegos_mandos_menu"
+                  name="Mandos"
+                  action="juegos_mandos_action"
+                  parent="menu_consolas"
+                  sequence="13" />
+
+        <record id="juegos_mandos_view_tree" model="ir.ui.view">
+            <field name="name">Lista de mandos</field>
+            <field name="model">juegos.mandos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="juegos_mandos_view_form" model="ir.ui.view">
+            <field name="name">Formulario de mandos</field>
+            <field name="model">juegos.mandos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="limpiar" type="object" string="Limpiar" class="oe_highlight" />
+
+                    </header>
+                    <group>
+                        <field name="marca" />
+                        <field name="nombre" />
+                        <field name="descripcion" />
+                        <field name="precio" />
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juegos_mandos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de mandos</field>
+            <field name="model">juegos.mandos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="marca" />
+                    <field name="nombre" />
+                    <field name="descripcion" />
+                    <field name="precio" />
+
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
